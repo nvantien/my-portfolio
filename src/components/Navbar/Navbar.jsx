@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
+import MobileNav from './MobileNav/MobileNav';
+import { SlMenu, SlArrowRight } from "react-icons/sl";
+
+
 
 const Navbar = () => {
+    const [openMenu, setOpenMenu] = useState(false);
+
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu);
+    };
+
     return (
         <>
+            <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
             <nav className="nav-wrapper">
                 <div className="nav-content">
-                    <img src="" alt="" className="logo" />
+                    <img className="logo" src="./images/logo.png" alt="" />
 
                     <ul>
                         <li><a href="" className="menu-item">Home</a></li>
@@ -17,13 +28,13 @@ const Navbar = () => {
                         <button className="contact-btn" onClick={() => { }}>Hire me</button>
                     </ul>
 
-                    <button className="menu-btn" onClick={() => {}}>
-                        <span
-                            class={"material-symbols-outlined"}
-                            style={{ fontSize: "1.8rem" }}
-                        >
-                            Menu
-                        </span>
+                    <button className="menu-btn" onClick={toggleMenu}>
+                       
+                        {openMenu ? (
+                            <SlArrowRight style={{ fontSize: "1.8rem" }} />  // Icon đóng (close)
+                        ) : (
+                            <SlMenu style={{ fontSize: "1.8rem" }} />  // Icon menu (menu)
+                        )}
                     </button>
                 </div>
             </nav>
