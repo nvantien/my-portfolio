@@ -14,9 +14,21 @@ export const Hero = () => {
             <div className="hero-img">
                 <div>
                     <div className="tech-icon">
-
+                        <img src="./images/img01.png" alt="" />
                     </div>
-                    <img src="" alt="" />
+                    <img src="./images/device.jpg" alt="" />
+                </div>
+
+                <div>
+                    <div className="tech-icon">
+                        <img src="./images/img02.png" alt="" />
+                    </div>
+                    <div className="tech-icon">
+                        <img src="./images/img03.png" alt="" />
+                    </div>
+                    <div className="tech-icon">
+                        <img src="./images/img04.png" alt="" />
+                    </div>
                 </div>
             </div>
         </section>
